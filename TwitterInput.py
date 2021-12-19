@@ -36,12 +36,12 @@ def sendData(c_socket):
   auth.set_access_token(access_token, access_token_secret)
 
   twitter_stream = Stream(auth, TweetsListener(c_socket))
-  twitter_stream.filter(track=['News'])
+  twitter_stream.filter(track=['president'])
 
 if __name__ == "__main__":
   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)         # Create a socket object
   host = "127.0.0.1"     # Get local machine name
-  port = 5557                 # Reserve a port for your service.
+  port = 5556                 # Reserve a port for your service.
   s.bind((host, port))        # Bind to the port
 
   print("Listening on port: %s" % str(port))
